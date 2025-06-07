@@ -18,7 +18,7 @@ const experiences = [
   {
     job: "Web Developer",
     company: "RetoINDIA",
-    date: "2025 - Present",
+    date: "2025",
     responsibilities: [
       "Contributing to the development and enhancement of a user-interactive eCommerce platform.",
       "Built visually appealing, responsive websites using Framer.",
