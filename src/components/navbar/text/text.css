@@ -1,35 +1,117 @@
-@import url("https://fonts.googleapis.com/css?  family=Lora:400,400i,700,700i");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap");
 
-body {
-  margin:0;
+.patterns {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
 }
 
-svg text {
- font-family: Lora;
- letter-spacing: 10px;
- stroke: #00ff00;
- font-size: 20px;
- font-weight: 200;
- stroke-width: 1;
-
- animation: textAnimate 5s infinite alternate;
- 
+.patterns svg {
+  width: 100%;
+  height: 100%;
 }
 
-@keyframes textAnimate {
- 0% {
-   stroke-dasharray: 0 50%;
-   stroke-dashoffset:  20%;
-   fill:hsl(189, 68%, 75%)
+.patterns svg text {
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 8px;
+  stroke: #00ff00;
+  font-size: 24px;
+  font-weight: 600;
+  stroke-width: 2;
+  fill: transparent;
+  text-anchor: middle;
+  dominant-baseline: middle;
+  
+  animation: techTextAnimate 4s ease-in-out infinite alternate,
+             glow 2s ease-in-out infinite alternate;
+}
 
- }
- 
- 100% {
-   stroke-dasharray: 50% 0;
-   stroke-dashoffstet: -20%;
-   fill: hsla(189, 68%, 75%,0%)
- }
- 
+/* Modern tech animation */
+@keyframes techTextAnimate {
+  0% {
+    stroke-dasharray: 0 100%;
+    stroke-dashoffset: 20%;
+    fill: transparent;
+    filter: drop-shadow(0 0 5px #00ff00);
+  }
+  
+  50% {
+    stroke-dasharray: 50% 50%;
+    stroke-dashoffset: 0%;
+    fill: rgba(0, 255, 0, 0.1);
+    filter: drop-shadow(0 0 10px #00ff00);
+  }
+  
+  100% {
+    stroke-dasharray: 100% 0;
+    stroke-dashoffset: -20%;
+    fill: rgba(0, 255, 0, 0.2);
+    filter: drop-shadow(0 0 15px #00ff00);
+  }
+}
+
+/* Glowing effect */
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00;
+  }
+  100% {
+    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00;
+  }
+}
+
+/* Matrix-like background pattern */
+.patterns::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(rgba(0, 255, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 0, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+  animation: matrix-move 10s linear infinite;
+  z-index: 1;
+}
+
+@keyframes matrix-move {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(20px, 20px); }
+}
+
+/* Floating particles */
+.patterns::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(circle at 20% 50%, rgba(0, 255, 0, 0.1) 2px, transparent 2px),
+                    radial-gradient(circle at 80% 20%, rgba(0, 191, 255, 0.1) 1px, transparent 1px),
+                    radial-gradient(circle at 40% 80%, rgba(0, 255, 0, 0.08) 1px, transparent 1px);
+  background-size: 50px 50px, 80px 80px, 120px 120px;
+  animation: float-particles 15s ease-in-out infinite;
+  z-index: 1;
+}
+
+@keyframes float-particles {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg); 
+    opacity: 0.5;
+  }
+  33% { 
+    transform: translateY(-10px) rotate(1deg); 
+    opacity: 0.8;
+  }
+  66% { 
+    transform: translateY(5px) rotate(-1deg); 
+    opacity: 0.6;
+  }
 }
 
 
