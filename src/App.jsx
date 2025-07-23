@@ -20,7 +20,7 @@ function App() {
       {/* Enhanced background with tech patterns */}
       <div className="fixed inset-0 pointer-events-none">
         {/* Matrix-like rain effect */}
-        <div className="absolute inset-0 opacity-30">
+        {/* <div className="absolute inset-0 opacity-30">
           {Array.from({ length: 100 }, (_, i) => {
             const characters = ['0', '1', 'ア', 'イ', 'ウ', 'エ', 'オ', 'カ', 'キ', 'ク'];
             return (
@@ -39,7 +39,7 @@ function App() {
               </div>
             );
           })}
-        </div>
+        </div> */}
 
         {/* Subtle grid overlay */}
         <div 

@@ -24,7 +24,7 @@ const AboutMeText = () => {
 
       {/* Enhanced heading */}
       <motion.h2 
-        variants={fadeIn("right", 0.2)}
+        variants={fadeIn("right", 0.1)}
         initial="hidden"
         whileInView="show"
         viewport={{ once: false, amount: 0.3 }}
@@ -42,7 +42,7 @@ const AboutMeText = () => {
 
       {/* Dynamic typewriter subtitle */}
       <motion.div
-        variants={fadeIn("right", 0.4)}
+        variants={fadeIn("right", 0.1)}
         initial="hidden"
         whileInView="show"
         viewport={{ once: false, amount: 0.3 }}
@@ -51,9 +51,9 @@ const AboutMeText = () => {
         <span className="text-green font-mono text-sm">$</span>
         <TypewriterEffect 
           texts={highlights}
-          speed={80}
-          deleteSpeed={40}
-          delayBetween={2000}
+          speed={40}
+          deleteSpeed={20}
+          delayBetween={1000}
           cursorColor="green"
           className="text-green/80 font-mono"
         />
@@ -61,7 +61,7 @@ const AboutMeText = () => {
 
       {/* Enhanced description */}
       <motion.div
-        variants={fadeIn("right", 0.6)}
+        variants={fadeIn("right", 0.1)}
         initial="hidden"
         whileInView="show"
         viewport={{ once: false, amount: 0.3 }}
@@ -106,7 +106,7 @@ const AboutMeText = () => {
 
       {/* Key skills indicators */}
       <motion.div
-        variants={fadeIn("right", 0.8)}
+        variants={fadeIn("right", 0.3)}
         initial="hidden"
         whileInView="show"
         viewport={{ once: false, amount: 0.3 }}
@@ -128,7 +128,7 @@ const AboutMeText = () => {
 
       {/* Enhanced CTA button */}
       <motion.div
-        variants={fadeIn("right", 1.0)}
+        variants={fadeIn("right", 0.4)}
         initial="hidden"
         whileInView="show"
         viewport={{ once: false, amount: 0.3 }}
