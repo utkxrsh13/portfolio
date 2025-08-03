@@ -10,6 +10,7 @@ import SkillsMain from "./components/skillsSection/SkillsMain";
 import SubSkills from "./components/skillsSection/SubSkills";
 import SubHeroMain from "./components/subHeroSection/SubHeroMain";
 import ScrollProgress from "./components/ui/ScrollProgress";
+import { Analytics } from '@vercel/analytics/react';
 
 function App() {
   return (
@@ -86,6 +87,7 @@ function App() {
         <ContactMeMain />
         <FooterMain />
       </div>
+      <Analytics />
     </main>
   );
 }
