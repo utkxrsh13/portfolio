@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 
 const Button1 = () => {
@@ -8,7 +7,7 @@ const Button1 = () => {
   return (
     <StyledWrapper>
       <div className="light-button">
-        <button className="bt" onClick={handleClick}>
+        <button className="bt" onClick={handleClick} data-cursor="pointer" data-cursor-text="GITHUB">
           <div className="light-holder">
             <div className="dot" />
             <div className="light" />

@@ -5,7 +5,7 @@ const Button = () => {
   return (
     <StyledWrapper>
       <div className="voltage-button">
-        <button>Hire me</button>
+        <button data-cursor="pointer" data-cursor-text="HIRE ME">Hire me</button>
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 234.6 61.3" preserveAspectRatio="none" xmlSpace="preserve">
           <filter id="glow">
             <feGaussianBlur className="blur" result="coloredBlur" stdDeviation={2} />

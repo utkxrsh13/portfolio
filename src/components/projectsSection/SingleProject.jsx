@@ -44,6 +44,7 @@ const SingleProject = ({ name, year, align, image, link }) => {
             href={link}
             target="_blank"
             rel="noopener noreferrer"
+            data-cursor-text={isGithubLink ? "CODE" : "LIVE"}
             className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg border-2 transition-all duration-300 font-mono text-sm uppercase tracking-wider
               ${isGithubLink 
                 ? 'border-cyan/50 text-cyan hover:bg-cyan/10 hover:border-cyan hover:shadow-cyber' 
@@ -88,7 +89,8 @@ const SingleProject = ({ name, year, align, image, link }) => {
             <img 
               src={image} 
               alt={`${name} project preview`}
-              className="w-full h-full object-cover transform transition-all duration-700 group-hover:scale-110 filter group-hover:brightness-110 group-hover:contrast-110"
+              className="w-full h-full object-cover transform transition-all duration-700 group-hover:scale-110 filter group-hover:brightness-110 group-hover:contrast-110 image-content"
+              data-cursor-text="PREVIEW"
             />
 
             {/* Corner tech decorations */}

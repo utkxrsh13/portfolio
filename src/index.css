@@ -164,3 +164,223 @@ body {
 .font-mono {
   font-family: 'JetBrains Mono', 'Courier New', monospace;
 }
+
+/* Custom cursor enhancements */
+* {
+  cursor: none !important;
+}
+
+/* Cursor hover states for interactive elements */
+a, button, [role="button"], .cursor-pointer, input, textarea, select {
+  position: relative;
+}
+
+/* Smooth cursor animations */
+@keyframes cursor-pulse {
+  0%, 100% { 
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  50% { 
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+@keyframes cursor-click {
+  0% { 
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  100% { 
+    transform: translate(-50%, -50%) scale(2);
+    opacity: 0;
+  }
+}
+
+/* Ripple effect */
+.cursor-ripple {
+  animation: cursor-click 0.6s ease-out forwards;
+}
+
+/* Magnetic effect for interactive elements */
+.magnetic-element {
+  transition: transform 0.2s ease-out;
+}
+
+.magnetic-element:hover {
+  transform: scale(1.05);
+}
+
+/* Matrix animation for projects section */
+@keyframes matrix-scroll {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(60px); }
+}
+
+/* Floating animation for code elements */
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.6;
+  }
+  50% { 
+    transform: translateY(-20px) rotate(10deg);
+    opacity: 0.8;
+  }
+}
+
+/* Custom animations for cursor */
+@keyframes cursor-glow {
+  0%, 100% { 
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+  }
+  50% { 
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+  }
+}
+
+@keyframes cursor-hover-scale {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.5); }
+  100% { transform: scale(1.2); }
+}
+
+@keyframes magnetic-pull {
+  0% { transform: translateX(0) translateY(0); }
+  50% { transform: translateX(5px) translateY(5px); }
+  100% { transform: translateX(0) translateY(0); }
+}
+
+@keyframes particle-float {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.3;
+  }
+  50% { 
+    transform: translateY(-10px) rotate(180deg);
+    opacity: 0.8;
+  }
+}
+
+/* Custom cursor styles */
+.custom-cursor {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(0, 255, 0, 0.7);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transition: all 0.1s ease;
+  animation: cursor-glow 2s infinite;
+}
+
+.custom-cursor::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  background: rgba(0, 255, 255, 0.8);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: particle-float 1.5s infinite alternate;
+}
+
+.cursor-hover {
+  transform: scale(1.5);
+  border-color: rgba(0, 255, 255, 0.9);
+  animation: cursor-hover-scale 0.3s ease;
+}
+
+/* Update magnetic element with enhanced animation */
+.magnetic-element {
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.magnetic-element:hover {
+  animation: magnetic-pull 0.6s ease;
+}
+
+/* Particle effects */
+.cursor-particle {
+  position: fixed;
+  width: 3px;
+  height: 3px;
+  background: rgba(0, 255, 0, 0.6);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  animation: particle-float 2s infinite linear;
+}
+
+/* Enhanced particle colors for interactive cursor */
+.bg-green { background-color: #00ff00 !important; }
+.bg-cyan { background-color: #00ffff !important; }
+.bg-yellow { background-color: #ffff00 !important; }
+.bg-purple { background-color: #ff00ff !important; }
+
+/* Cursor trail effects */
+.cursor-trail {
+  position: fixed;
+  pointer-events: none;
+  border-radius: 50%;
+  background: rgba(0, 255, 0, 0.3);
+  animation: trail-fade 0.5s ease-out forwards;
+}
+
+@keyframes trail-fade {
+  0% { 
+    opacity: 1; 
+    transform: scale(1);
+  }
+  100% { 
+    opacity: 0; 
+    transform: scale(0.5);
+  }
+}
+
+/* Interactive element hover states */
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.4), 0 0 40px rgba(0, 255, 0, 0.2);
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.4); 
+  }
+  50% { 
+    box-shadow: 0 0 40px rgba(0, 255, 0, 0.8), 0 0 60px rgba(0, 255, 0, 0.4); 
+  }
+}
+
+/* Velocity-based cursor effects */
+@keyframes cursor-velocity-stretch {
+  0% { transform: translate(-50%, -50%) scaleX(1); }
+  100% { transform: translate(-50%, -50%) scaleX(2); }
+}
+
+/* Glitch effect for cursor */
+@keyframes cursor-glitch {
+  0%, 100% { 
+    filter: hue-rotate(0deg) brightness(1); 
+    transform: translate(-50%, -50%);
+  }
+  10% { 
+    filter: hue-rotate(90deg) brightness(1.5); 
+    transform: translate(-48%, -52%);
+  }
+  20% { 
+    filter: hue-rotate(180deg) brightness(0.8); 
+    transform: translate(-52%, -48%);
+  }
+  30% { 
+    filter: hue-rotate(270deg) brightness(1.2); 
+    transform: translate(-50%, -50%);
+  }
+}

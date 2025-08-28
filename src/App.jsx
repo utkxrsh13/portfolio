@@ -1,4 +1,5 @@
 import AboutMeMain from "./components/aboutMeSection/AboutMeMain";
+import CustomCursor from "./components/ui/CustomCursor";
 import ContactMeMain from "./components/contactMeSection/ContactMeMain";
 import ExperienceMain from "./components/experienceSection/ExperienceMain";
 import FooterMain from "./components/footer/FooterMain";
@@ -15,6 +16,7 @@ import { Analytics } from '@vercel/analytics/react';
 function App() {
   return (
     <main className="font-body text-white relative overflow-hidden">
+      <CustomCursor />
       {/* Scroll progress indicator */}
       <ScrollProgress />
       
