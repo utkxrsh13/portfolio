@@ -15,73 +15,95 @@ import { fadeIn } from "../../framerMotion/variants";
 
 const skills = [
   {
-    skill: "JAVA",
-    icon: FaJava,
-  },
-  {
     skill: "HTML",
     icon: FaHtml5,
+    proficiency: "Expert",
+    progress: 95
   },
   {
     skill: "CSS",
     icon: FaCss3Alt,
+    proficiency: "Expert",
+    progress: 90
   },
   {
     skill: "JavaScript",
     icon: IoLogoJavascript,
+    proficiency: "Advanced",
+    progress: 85
   },
   {
     skill: "TypeScript",
     icon: SiTypescript,
+    proficiency: "Intermediate",
+    progress: 75
   },
   {
     skill: "ReactJS",
     icon: FaReact,
+    proficiency: "Advanced",
+    progress: 88
   },
   {
     skill: "Redux",
     icon: SiRedux,
+    proficiency: "Intermediate",
+    progress: 70
   },
   {
     skill: "TailwindCSS",
     icon: RiTailwindCssFill,
+    proficiency: "Expert",
+    progress: 92
   },
   {
     skill: "Nodejs",
     icon: FaNode,
+    proficiency: "Advanced",
+    progress: 82
   },
   {
     skill: "Expressjs",
     icon: SiExpress,
+    proficiency: "Advanced",
+    progress: 78
   },
   {
     skill: "MongoDB",
     icon: SiMongodb,
+    proficiency: "Intermediate",
+    progress: 72
+  },
+  {
+    skill: "JAVA",
+    icon: FaJava,
+    proficiency: "Beginner",
+    progress: 60
   },
 ];
 
 const AllSkills = () => {
   return (
-    <div>
-      <div className="flex items-center justify-center relative gap-2 max-w-[1200px] mx-auto">
-        {skills.map((item, index) => {
-          return (
-            <motion.div
-              variants={fadeIn("up", index*0.2)}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: false, amount: 0 }}
+    <div className="grid lg:grid-cols-6 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-4 my-12 px-4 max-w-6xl mx-auto">
+      {skills.map((item, index) => {
+        return (
+          <motion.div
+            variants={fadeIn("up", index * 0.1)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.7 }}
+            key={index}
+          >
+            <SingleSkill
               key={index}
-            >
-              <SingleSkill
-                key={index}
-                text={item.skill}
-                imgSvg={<item.icon />}
-              />
-            </motion.div>
-          );
-        })}
-      </div>
+              text={item.skill}
+              imgSvg={<item.icon />}
+              proficiency={item.proficiency}
+              progress={item.progress}
+            />
+          </motion.div>
+        );
+      })}
     </div>
   );
 };

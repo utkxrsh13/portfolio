@@ -84,7 +84,7 @@ const ContactForm = () => {
             name="from_name"
             placeholder="Your Name"
             required
-            className={`${inputClasses} pl-12`}
+            className={`${inputClasses} pl-12 text-bg1`}
             value={name}
             onChange={handleName}
           />

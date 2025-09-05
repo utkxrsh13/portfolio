@@ -44,7 +44,7 @@ const experiences = [
     status: "Multiple Projects",
     technologies: ["React", "JavaScript", "SCSS", "Bootstrap"],
     responsibilities: [
-      "Completed 8+ successful client projects ranging from portfolios to web applications",
+      "Completed 2+ successful client projects ranging from portfolios to web applications",
       "Specialized in converting designs to pixel-perfect, responsive websites",
       "Implemented modern JavaScript frameworks and libraries",
       "Maintained 98% client satisfaction rate with timely project delivery",

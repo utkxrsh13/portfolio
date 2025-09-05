@@ -1,5 +1,4 @@
 import AllSkills from "./AllSkills";
-import AllSkillsSM from "./AllSkillsSM";
 import SkillsText from "./SkillsText";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../framerMotion/variants";
@@ -72,25 +71,14 @@ const SkillsMain = () => {
           <SkillsText />
         </motion.div>
         
-        {/* Desktop skills layout */}
-        <div className="bottom-[50px] absolute left-[50%] -translate-x-[50%] sm:hidden lg:block">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-          >
-            <AllSkills />
-          </motion.div>
-        </div>
-        
-        {/* Mobile skills layout */}
-        <div className="sm:block lg:hidden">
+        {/* Skills layout for all screen sizes */}
+        <div className="w-full">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <AllSkillsSM />
+            <AllSkills />
           </motion.div>
         </div>
 
