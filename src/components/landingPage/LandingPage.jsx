@@ -52,7 +52,7 @@ const LandingPage = ({ onEnter = () => {} }) => {
 
   // Boot sequence and typing effect
   useEffect(() => {
-    const timer = setTimeout(() => setBootSequence(true), 500);
+    const timer = setTimeout(() => setBootSequence(true), 4000); // Increased from 500ms to 4000ms (4 seconds)
     return () => clearTimeout(timer);
   }, []);
 
@@ -177,44 +177,73 @@ const LandingPage = ({ onEnter = () => {} }) => {
             </div>
           </div>
 
-          {/* Terminal content */}
-          <div className="p-3 md:p-6 h-96 overflow-hidden">
-            {!bootSequence ? (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                className="flex items-center justify-center h-full"
-              >
-                <div className="text-center">
+          
+                <div className="p-3 md:p-6 h-96 overflow-hidden">
+                {!bootSequence ? (
                   <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  className="flex items-center justify-center h-full"
+                  >
+                  <div className="text-center">
+                    <motion.div
                     animate={{ 
                       textShadow: [
-                        "0 0 5px #00ff00",
-                        "0 0 20px #00ff00",
-                        "0 0 5px #00ff00"
+                      "0 0 5px #00ff00",
+                      "0 0 20px #00ff00",
+                      "0 0 5px #00ff00"
                       ]
                     }}
                     transition={{ duration: 10, repeat: Infinity }}
                     className="text-4xl mb-4"
-                  >
+                    >
                     ▓▓▓ BOOTING SYSTEM ▓▓▓
-                  </motion.div>
-                  <motion.div
+                    </motion.div>
+                    
+                    {/* Additional boot messages */}
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 1, duration: 0.5 }}
+                      className="text-green-400 text-sm mb-2"
+                    >
+                      Initializing core modules...
+                    </motion.div>
+                    
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 2, duration: 0.5 }}
+                      className="text-green-400 text-sm mb-2"
+                    >
+                      Loading portfolio data...
+                    </motion.div>
+                    
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 3, duration: 0.5 }}
+                      className="text-green-400 text-sm mb-4"
+                    >
+                      Preparing interface...
+                    </motion.div>
+                    
+                    <motion.div
                     animate={{ width: ["0%", "100%"] }}
-                    transition={{ duration: 2 }}
+                    transition={{ duration: 3.5, delay: 0.5 }} // Increased duration and reduced delay
                     className="h-1 bg-green-500 mx-auto"
                     style={{ maxWidth: "200px" }}
-                  />
-                </div>
-              </motion.div>
-            ) : (
-              <div className="h-full overflow-y-auto overflow-x-hidden">
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  className="whitespace-pre-wrap text-sm leading-relaxed break-words"
-                >
-                  {/* ASCII Art Header */}
+                    />
+                  </div>
+                  </motion.div>
+                ) : (
+                  <div className="h-full overflow-y-auto overflow-x-hidden">
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    className="whitespace-pre-wrap text-sm leading-relaxed break-words"
+                  >
+                    
                   <div className="text-green-300 mb-4 text-xs md:text-xs overflow-hidden">
                     <div className="whitespace-pre text-center max-w-full scale-75 md:scale-100 origin-top">
 {`╔══════════════════════════════════════════════════╗
