@@ -50,8 +50,8 @@ const ContactForm = () => {
       );
   };
 
-  const inputClasses = "h-12 rounded-xl bg-gray-900/50 backdrop-blur-sm border border-gray-600/50 px-4 text-white placeholder-gray-400 focus:outline-none focus:border-green/50 focus:ring-2 focus:ring-green/20 transition-all duration-300 hover:border-gray-500/70";
-  const textareaClasses = "rounded-xl bg-gray-900/50 backdrop-blur-sm border border-gray-600/50 p-4 text-white placeholder-gray-400 focus:outline-none focus:border-green/50 focus:ring-2 focus:ring-green/20 transition-all duration-300 hover:border-gray-500/70 resize-none";
+  const inputClasses = "h-12 rounded-xl bg-gray-900/50 backdrop-blur-sm border border-gray-600/50 px-4 text-black placeholder-gray-400 focus:outline-none focus:border-green/50 focus:ring-2 focus:ring-green/20 transition-all duration-300 hover:border-gray-500/70";
+  const textareaClasses = "rounded-xl bg-gray-900/50 backdrop-blur-sm border border-gray-600/50 p-4 text-black placeholder-gray-400 focus:outline-none focus:border-green/50 focus:ring-2 focus:ring-green/20 transition-all duration-300 hover:border-gray-500/70 resize-none";
 
   return (
     <div className="relative">
@@ -84,7 +84,7 @@ const ContactForm = () => {
             name="from_name"
             placeholder="Your Name"
             required
-            className={`${inputClasses} pl-12 text-bg1`}
+            className={`${inputClasses} pl-12`}
             value={name}
             onChange={handleName}
           />

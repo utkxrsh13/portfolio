@@ -17,68 +17,90 @@ const skills = [
   {
     skill: "HTML",
     icon: FaHtml5,
+    color: "text-orange-500",
+    bgColor: "from-orange-500/20 to-red-500/20",
     proficiency: "Expert",
-    progress: 95
+    progress: 99
   },
   {
     skill: "CSS",
     icon: FaCss3Alt,
+    color: "text-blue-500",
+    bgColor: "from-blue-500/20 to-cyan-500/20",
     proficiency: "Expert",
-    progress: 90
+    progress: 80
   },
   {
     skill: "JavaScript",
     icon: IoLogoJavascript,
-    proficiency: "Advanced",
+    color: "text-yellow-400",
+    bgColor: "from-yellow-400/20 to-orange-400/20",
+    proficiency: "Intermediate",
     progress: 85
   },
   {
     skill: "TypeScript",
     icon: SiTypescript,
-    proficiency: "Intermediate",
-    progress: 75
+    color: "text-blue-400",
+    bgColor: "from-blue-400/20 to-blue-600/20",
+    proficiency: "Beginner",
+    progress: 50
   },
   {
     skill: "ReactJS",
     icon: FaReact,
+    color: "text-cyan-400",
+    bgColor: "from-cyan-400/20 to-blue-400/20",
     proficiency: "Advanced",
-    progress: 88
+    progress: 100
   },
   {
     skill: "Redux",
     icon: SiRedux,
+    color: "text-purple-500",
+    bgColor: "from-purple-500/20 to-pink-500/20",
     proficiency: "Intermediate",
     progress: 70
   },
   {
     skill: "TailwindCSS",
     icon: RiTailwindCssFill,
+    color: "text-cyan-400",
+    bgColor: "from-cyan-400/20 to-teal-400/20",
     proficiency: "Expert",
     progress: 92
   },
   {
-    skill: "Nodejs",
+    skill: "Node.js",
     icon: FaNode,
-    proficiency: "Advanced",
-    progress: 82
+    color: "text-green-500",
+    bgColor: "from-green-500/20 to-emerald-500/20",
+    proficiency: "Intermediate",
+    progress: 80
   },
   {
-    skill: "Expressjs",
+    skill: "Express.js",
     icon: SiExpress,
-    proficiency: "Advanced",
-    progress: 78
+    color: "text-gray-300",
+    bgColor: "from-gray-300/20 to-gray-500/20",
+    proficiency: "Intermediate",
+    progress: 70
   },
   {
     skill: "MongoDB",
     icon: SiMongodb,
+    color: "text-green-400",
+    bgColor: "from-green-400/20 to-green-600/20",
     proficiency: "Intermediate",
     progress: 72
   },
   {
-    skill: "JAVA",
+    skill: "Java",
     icon: FaJava,
-    proficiency: "Beginner",
-    progress: 60
+    color: "text-red-500",
+    bgColor: "from-red-500/20 to-orange-600/20",
+    proficiency: "Expert",
+    progress: 90
   },
 ];
 
