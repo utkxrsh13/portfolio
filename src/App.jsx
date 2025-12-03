@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import AboutMeMain from "./components/aboutMeSection/AboutMeMain";
 import CustomCursor from "./components/ui/CustomCursor";
 import ContactMeMain from "./components/contactMeSection/ContactMeMain";
@@ -13,41 +12,18 @@ import SkillsMain from "./components/skillsSection/SkillsMain";
 import SubSkills from "./components/skillsSection/SubSkills";
 import SubHeroMain from "./components/subHeroSection/SubHeroMain";
 import ScrollProgress from "./components/ui/ScrollProgress";
-import LandingPage from "./components/landingPage/LandingPage";
 import { Analytics } from '@vercel/analytics/react';
 
 function App() {
-  const [showLanding, setShowLanding] = useState(true);
-
-  useEffect(() => {
-    // Landing page will always show on initial load
-    // Remove localStorage check to ensure landing page appears every time
-  }, []);
-
-  const handleEnterPortfolio = () => {
-    setShowLanding(false);
-  };
-
   return (
     <>
       <CustomCursor />
-      <AnimatePresence mode="wait">
-        {showLanding ? (
-          <motion.div
-            key="landing"
-            exit={{ opacity: 0, scale: 1.1 }}
-            transition={{ duration: 1, ease: "easeInOut" }}
-          >
-            <LandingPage onEnter={handleEnterPortfolio} />
-          </motion.div>
-        ) : (
-          <motion.main
-            key="portfolio"
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-            className="font-body text-white relative overflow-hidden"
-          >
+      <motion.main
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+        className="font-body text-white relative overflow-hidden"
+      >
             {/* Scroll progress indicator */}
             <ScrollProgress />
             
@@ -96,14 +72,10 @@ function App() {
               <ExperienceMain />
               <ProjectsMain />
               <ContactMeMain />
-              <FooterMain />
-            </div>
-            <Analytics />
-          </motion.main>
-        )}
-      </AnimatePresence>
+            <FooterMain />
+          </div>
+          <Analytics />
+        </motion.main>
     </>
   );
-}
-
-export default App;
+}export default App;
