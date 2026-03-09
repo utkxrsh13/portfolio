@@ -5,9 +5,45 @@ import NavbarToggler from "./NavbarToggler";
 import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 
+const useViewCounter = () => {
+  const [views, setViews] = useState(null);
+
+  useEffect(() => {
+    const namespace = 'utkarsh-portfolio';
+    const key = 'views';
+    
+    // Check if this session already counted a view
+    const hasViewed = sessionStorage.getItem('portfolio-viewed');
+    
+    const fetchViews = async () => {
+      try {
+        if (!hasViewed) {
+          // Increment view count (hit endpoint)
+          const res = await fetch(`https://api.counterapi.dev/v1/${namespace}/${key}/up`);
+          const data = await res.json();
+          setViews(data.count);
+          sessionStorage.setItem('portfolio-viewed', 'true');
+        } else {
+          // Just get current count without incrementing
+          const res = await fetch(`https://api.counterapi.dev/v1/${namespace}/${key}`);
+          const data = await res.json();
+          setViews(data.count);
+        }
+      } catch (error) {
+        console.error('Failed to fetch view count:', error);
+      }
+    };
+
+    fetchViews();
+  }, []);
+
+  return views;
+};
+
 const NavbarMain = () => {
   const menuOpen = useSelector((state) => state.menu.menuOpen);
   const [scrolled, setScrolled] = useState(false);
+  const views = useViewCounter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,6 +56,11 @@ const NavbarMain = () => {
 
   return (
     <nav className="w-full fixed top-0 left-0 z-[9999] px-4 py-3" style={{ pointerEvents: 'auto' }}>
+      {views !== null && (
+            <div className="hidden lg:block text-green/60 text-sm font-medium">
+              Views: {views}
+            </div>
+          )}
       <div className="max-w-7xl mx-auto">
         {/* Main navbar container */}
         <div
@@ -35,7 +76,8 @@ const NavbarMain = () => {
           <div className="flex-shrink-0 z-10">
             <NavbarLogo />
           </div>
-          
+        
+
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center">
             <NavbarLinks />
