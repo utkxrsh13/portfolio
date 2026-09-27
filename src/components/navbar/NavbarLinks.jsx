@@ -8,7 +8,7 @@ const links = [
   { link: "Experience", section: "experience" },
   { link: "Projects", section: "projects" },
   { link: "Contact", section: "contact" },
-  { link: "GitHub", url: "https://github.com/utkxrsh13" },
+  { link: "Topmate", url: "https://topmate.io/utkxrsh" },
 ];
 
 const NavbarLinks = () => {
